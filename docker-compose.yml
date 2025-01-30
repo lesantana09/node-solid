@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: api-solid-pg
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/projects/node-solid/.database/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=@admin_solid
+      - POSTGRES_USER=admin
+      - POSTGRES_DATABASE=apisolid
