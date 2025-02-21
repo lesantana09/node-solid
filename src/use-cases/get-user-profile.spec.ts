@@ -36,7 +36,7 @@ describe('Get User Profile Use Case', () => {
     it('should not be able to authenticate with wrong id', async () => {
 
 
-        expect(() => sut.execute({
+        await expect(() => sut.execute({
             userId: 'non-exting-id',
         })).rejects.toBeInstanceOf(ResourceNotFoundError)
     })
